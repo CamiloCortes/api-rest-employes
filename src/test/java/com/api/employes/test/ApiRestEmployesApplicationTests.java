@@ -26,14 +26,14 @@ public class ApiRestEmployesApplicationTests {
 	@TestConfiguration
 	static class EmployeeServiceImplTestContextConfiguration {
 
-		@Bean("test")
+		@Bean("employeeServicetest")
 		public IEmployeService employeeService() {
 			return new EmployeServiceImpl();
 		}
 	}
 
 	@Autowired
-	@Qualifier("test")
+	@Qualifier("employeeServicetest")
 	private IEmployeService employeService;
 
 	@MockBean
