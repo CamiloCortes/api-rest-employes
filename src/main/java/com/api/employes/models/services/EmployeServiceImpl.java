@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.api.employes.models.dao.IEmployeDao;
 import com.api.employes.models.entity.Employe;
+import com.api.employes.models.entity.Role;
 
 @Service
 public class EmployeServiceImpl implements IEmployeService {
@@ -37,6 +38,18 @@ public class EmployeServiceImpl implements IEmployeService {
 	public Employe findById(Long id) {
 		
 		return employeDao.findById(id).orElse(null);
+	}
+
+	@Override
+	public List<Role> findAllRoles() {
+		
+		return employeDao.findAllRoles();
+	}
+
+	@Override
+	public List<Employe> findAllBoss() {
+		
+		return employeDao.getAllBoss();
 	}
 
 }
